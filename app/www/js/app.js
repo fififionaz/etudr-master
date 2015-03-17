@@ -24,6 +24,16 @@ angular.module('etudr', ['ionic', 'etudr.controllers', 'etudr.services'])
       templateUrl: "templates/menu.html",
       controller: 'AppController'
     })
+    .state('app.intro', {
+               url: '/intro',
+               views: {
+               'menuContent': {
+               templateUrl: 'templates/intro.html',
+               controller: 'IntroController'
+            }
+        }
+    })
+        
       .state('app.dashbaord', {
         url: '/dashboard',
         views: {
@@ -53,6 +63,6 @@ angular.module('etudr', ['ionic', 'etudr.controllers', 'etudr.services'])
       })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/dashboard');
+  $urlRouterProvider.otherwise('/app/intro');
 
 });
