@@ -28,7 +28,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
+    .state('app', {
+      url: '/',
+      abstract: true,
+      templateUrl: "templates/menu.html"
+    })
+      .state('app.dashbaord', {
+        url: '/dashboard',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/dashboard.html',
+            controller: 'DashboardController'
+          }
+        }
+      })
+      .state('app.times', {
+        url: '/times',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/times.html',
+            controller: 'TimesController'
+          }
+        }
+      })
+      .state('app.newTopic', {
+        url: '/new-topic',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/new-topic.html',
+            controller: 'NewTopicController'
+          }
+        }
+      })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
