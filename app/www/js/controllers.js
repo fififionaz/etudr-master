@@ -1,26 +1,19 @@
 angular.module('etudr.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
+.controller('AppController', function($scope) {
+	
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('DashboardController', function($scope) {
+
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('NewTopicController', function($scope) {
+	
 })
 
-.controller('ContentController', function($scope){
-
+.controller('TimesController', function($scope) {
+	
 })
 
 ;
